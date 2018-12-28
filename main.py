@@ -3,6 +3,11 @@ import os
 
 
 class LargestWord:
+    """
+    Main program class.
+    This class will allow you to load a file with text, then it will return the largest word
+    As well as the same word in transposed form.
+    """
 
     def __init__(self, file_path):
         """
@@ -65,6 +70,11 @@ class LargestWord:
 
 
 def main():
+    """
+    If someone executes this script in the __main__ scope,
+    then an instance will be created with the default parameter below
+    :return: NA
+    """
     main_instance = LargestWord(file_path="tests/input_files/data_tc1.txt")
     words = main_instance.load_file()
     largest = main_instance.largest_word(words=words)
@@ -75,4 +85,7 @@ def main():
 
 
 if __name__ == "__main__":
+    """
+    Call main function is scrip is running on __main__ scope
+    """
     main()

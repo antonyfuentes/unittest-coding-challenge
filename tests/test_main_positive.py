@@ -3,6 +3,9 @@ from main import LargestWord
 
 
 class MainPositiveTest(TestCase):
+    """
+    Positive tests to be executed against LargestWord
+    """
 
     def test_tc1(self):
         """
