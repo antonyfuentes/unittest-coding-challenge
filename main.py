@@ -2,6 +2,15 @@ import itertools
 import os
 
 
+class CustomException(ValueError):
+    """
+    This is a custom exception to be raised when necessary
+    """
+    def __init__(self, arg):
+        self.strerror = arg
+        self.args = {arg}
+
+
 class LargestWord:
     """
     Main program class.
@@ -25,11 +34,11 @@ class LargestWord:
             with open(self.file_path, 'r') as f:
 
                 if os.path.splitext(f.name)[1] != ".txt":
-                    raise Exception('Invalid file type')
+                    raise CustomException('Invalid file type')
 
                 file_lines = f.readlines()
                 if len(file_lines) == 0:
-                    raise Exception("File is empty")
+                    raise CustomException("File is empty")
 
                 return [
                             i.strip() for i in itertools.chain.from_iterable(
@@ -40,8 +49,8 @@ class LargestWord:
             return "File not found"
         except UnicodeDecodeError:
             return "File is corrupted"
-        except Exception as error:
-            return str(error)
+        except CustomException as e:
+            return e.strerror
 
     @staticmethod
     def largest_word(words):
