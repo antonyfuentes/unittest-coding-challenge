@@ -16,8 +16,8 @@
 ## Instructions:
 - cd into the root folder of this project
 - In order to execute the unittests, run the following command:
-  - python3 -m unittest discover tests -v
+  - ```python3 -m unittest discover tests -v```
   - Command output should look like this:
     - ![unittest results](results-screenshot.png)
 - Main program can also be executed directy, example:
-  - python3 main.py
+  - ```python3 main.py```
