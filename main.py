@@ -95,6 +95,6 @@ def main():
 
 if __name__ == "__main__":
     """
-    Call main function is scrip is running on __main__ scope
+    Call main function if script is running on __main__ scope
     """
     main()
